@@ -6,6 +6,7 @@ var milliseconds = 0
 var timer;
 var running = false;
 
+
 function setTimer() {
 	timer = setInterval(function update() {
 		ReactDOM.render(millisecondsToTime(milliseconds), document.getElementById('time'));
@@ -74,7 +75,6 @@ function App() {
 				</div>
 				<div className="button-align">
 					<button className="start button" onClick={startClick}>Start</button>
-
 					<button className="pause button" onClick={pauseClick}>Pause</button>
 					<button className="reset button" onClick={resetClick}>Reset</button>
 				</div>
