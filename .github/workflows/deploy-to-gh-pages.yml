@@ -12,8 +12,8 @@ jobs:
 
     - name: Build
       run: |
-        npm run build
-        react-scripts build
+        npm install
+        npm run-scripts builds
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
