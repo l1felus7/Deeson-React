@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "948c112a508cccb92b2cb9317e999919",
+    "revision": "2eb7db40356b41b3ddfccd062b13f00f",
     "url": "/Deeson-React/index.html"
   },
   {
-    "revision": "60eeccacab99960048a9",
-    "url": "/Deeson-React/static/css/main.2c336053.chunk.css"
+    "revision": "856e4483190bd3af10cb",
+    "url": "/Deeson-React/static/css/main.27f22524.chunk.css"
   },
   {
     "revision": "2433fec4739a18f5d57c",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Deeson-React/static/js/2.2fefcdfa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "60eeccacab99960048a9",
+    "revision": "856e4483190bd3af10cb",
     "url": "/Deeson-React/static/js/main.d8b52c35.chunk.js"
   },
   {
