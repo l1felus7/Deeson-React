@@ -14,8 +14,6 @@ jobs:
       run: |
         npm run build
         react-scripts build
-        gh-pages -d build
-        npm build
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
