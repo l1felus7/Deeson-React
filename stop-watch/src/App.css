@@ -1,8 +1,9 @@
 :root {
-	--main-bg-color: #c2db5e;
-	--font-color: rgb(0, 0, 0);
-	--window-color: rgb(18, 135, 204);
-	--red: rgb(251, 28, 49);
+	--main-bg-color: #d4ddb0;
+	--font-color: #000000;
+	--window-color: #ffffff;
+  --laps-background-color: #f5f5dc;
+  --button-color: #f3ecbb;
 }
 
 *{
@@ -33,7 +34,7 @@
   padding-right: 10pt;
   padding-top: -5pt;
   font-size: 20pt;
-  background-color: #ffffff;
+  background-color: var(--window-color);
   font-family: monospace;
   border-radius: 10pt;
   box-shadow: inset 0pt 0pt 5pt rgb(0, 0, 0);
@@ -53,7 +54,7 @@
   cursor: pointer;
   border-radius: 10pt;
   border-style: none;
-  background-color: rgb(243, 236, 187);
+  background-color: var(--button-color);
 }
 
 .button:active{
@@ -65,7 +66,7 @@
   height: 20pc;
   margin-top: 15pt;
   text-align: center;
-  background-color: beige;
+  background-color: var(--laps-background-color);
   overflow-y: scroll;
   box-shadow: 0pt 0pt 3pt 3pt rgb(143, 142, 138);
   border-radius: 1pt;
@@ -82,7 +83,7 @@
   cursor: pointer;
   border-radius: 10pt;
   border-style: none;
-  background-color: rgb(243, 236, 187);
+  background-color: var(--button-color);
 }
 
 .delete-button:active{
