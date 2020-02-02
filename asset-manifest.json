@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Deeson-React/static/css/main.cbb7dfaf.chunk.css",
+    "main.css": "/Deeson-React/static/css/main.c0862438.chunk.css",
     "main.js": "/Deeson-React/static/js/main.30383260.chunk.js",
     "main.js.map": "/Deeson-React/static/js/main.30383260.chunk.js.map",
     "runtime-main.js": "/Deeson-React/static/js/runtime-main.606d899a.js",
@@ -8,15 +8,15 @@
     "static/js/2.2fefcdfa.chunk.js": "/Deeson-React/static/js/2.2fefcdfa.chunk.js",
     "static/js/2.2fefcdfa.chunk.js.map": "/Deeson-React/static/js/2.2fefcdfa.chunk.js.map",
     "index.html": "/Deeson-React/index.html",
-    "precache-manifest.ca8aac09412c27d537a743a9586277e4.js": "/Deeson-React/precache-manifest.ca8aac09412c27d537a743a9586277e4.js",
+    "precache-manifest.75cf90afabac986c2a2bdea067ded1de.js": "/Deeson-React/precache-manifest.75cf90afabac986c2a2bdea067ded1de.js",
     "service-worker.js": "/Deeson-React/service-worker.js",
-    "static/css/main.cbb7dfaf.chunk.css.map": "/Deeson-React/static/css/main.cbb7dfaf.chunk.css.map",
+    "static/css/main.c0862438.chunk.css.map": "/Deeson-React/static/css/main.c0862438.chunk.css.map",
     "static/js/2.2fefcdfa.chunk.js.LICENSE.txt": "/Deeson-React/static/js/2.2fefcdfa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.606d899a.js",
     "static/js/2.2fefcdfa.chunk.js",
-    "static/css/main.cbb7dfaf.chunk.css",
+    "static/css/main.c0862438.chunk.css",
     "static/js/main.30383260.chunk.js"
   ]
 }
