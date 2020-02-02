@@ -1,5 +1,8 @@
+*:focus {
+  outline: none;
+}
+
 .stopwatch {
-  /*background-color: #edeee9;*/
   background-color: #c2db5e;
   display: flex;
   flex-direction: column;
@@ -10,7 +13,7 @@
   width: 40pc;
   height: 40pc;
   box-shadow: 4px 4px 5px 6px rgb(100, 100, 100);
-  border-radius: 15px 50px 30px;
+  border-radius: 30px 50px 30px 50px;
 }
 
 .number-box{
@@ -32,4 +35,10 @@
   margin: 10px;
   box-shadow: 2px 2px rgb(100, 100, 100);
   font-size: large;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.button:active{
+  box-shadow: none;
 }

@@ -4,6 +4,7 @@ import './App.css';
 
 var milliseconds = 0
 var timer;
+var running = false;
 
 function setTimer() {
 	timer = setInterval(function update() {
@@ -30,10 +31,14 @@ function millisecondsToTime(time) {
 function runStopwatch(instruction) {
 	switch (instruction) {
 		case "start":
-			setTimer();
+			if (!running) {
+				setTimer();
+			}
 			break;
 		case "pause":
+			if (running) {
 			clearInterval(timer);
+			}
 			break;
 		case "reset":
 			milliseconds = 0;
@@ -45,10 +50,12 @@ function runStopwatch(instruction) {
 
 function startClick() {
 	runStopwatch("start");
+	running = true;
 }
 
 function pauseClick() {
 	runStopwatch("pause");
+	running = false;
 }
 
 function resetClick() {
