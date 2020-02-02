@@ -12,6 +12,9 @@ jobs:
 
     - name: Build
       run: |
+        npm run build
+        react-scripts build
+        gh-pages -d build
         npm build
 
     - name: Deploy
