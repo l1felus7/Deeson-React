@@ -45,9 +45,39 @@
   cursor: pointer;
   border-radius: 10px;
   border-style: none;
-  background-color: rgb(206, 206, 206);
+  background-color: rgb(243, 236, 187);
 }
 
 .button:active{
   box-shadow: inset 1px 1px rgb(100, 100, 100);
+}
+
+.lap-times{
+  width: 20pc;
+  height: 20pc;
+  text-align: center;
+  background-color: beige;
+  white-space: nowrap;
+  overflow: auto;
+  box-shadow: 0px 0px 3px 3px rgb(143, 142, 138);
+}
+
+.delete-button{
+  width: 2pc;
+  margin: 10px;
+  box-shadow: 1px 1px 1px 1px rgb(100, 100, 100);
+  font-size: 15pt;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+  background-color: rgb(243, 236, 187);
+}
+
+ol{
+  font-family: monospace;
+  font-size: 15pt;
+  list-style-type: none;
+  margin-left: -20pt;
 }

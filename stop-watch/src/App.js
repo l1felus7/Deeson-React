@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState }from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
 var milliseconds = -1
 var timer;
 var running = false;
-var lapTimes = [];
+var lapTimes = useState([]);
 
 function setTimer() {
 	timer = setInterval(function update() {
 		milliseconds++;
 		ReactDOM.render(millisecondsToTime(milliseconds), document.getElementById('time'));
-		}, 10);
+	}, 10);
 }
 
 
@@ -45,17 +45,30 @@ function startPauseClick() {
 }
 
 function lapClick() {
-	lapTimes.unshift(milliseconds);
+	if (milliseconds < 0) {
+		lapTimes.unshift(0)
+	}
+	else {
+		lapTimes.unshift(milliseconds);
+	}
 	ReactDOM.render(createLapList(), document.getElementById('laps'));
 }
 
-function createLapList(){
-	return(
+function createLapList() {
+	return (
 		<ol>
-			{lapTimes.map(lapTime => <li>{millisecondsToTime(lapTime)}</li>)}
+			{lapTimes.map((lapTime, index) => <li key={index}>
+				{millisecondsToTime(lapTime) + " "}<button className="delete-button" onClick={() => deleteLap(index)} >X</button></li>)}
 		</ol>
 	)
 }
+
+
+function deleteLap(index) {
+	lapTimes.splice(index, 1);
+	ReactDOM.render(createLapList(), document.getElementById('laps'));
+}
+
 
 function resetClick() {
 	milliseconds = 0;
