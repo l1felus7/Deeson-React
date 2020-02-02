@@ -1,4 +1,4 @@
-# Deesons-React
+# Deeson-React
 
 Please make sure you have Node.js installed before running this app
 https://nodejs.org/en/ 
