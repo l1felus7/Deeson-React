@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
-var milliseconds = 0
+var milliseconds = -1
 var timer;
 var running = false;
-
+var lapTimes = [];
 
 function setTimer() {
 	timer = setInterval(function update() {
-		ReactDOM.render(millisecondsToTime(milliseconds), document.getElementById('time'));
 		milliseconds++;
-	}, 10);
+		ReactDOM.render(millisecondsToTime(milliseconds), document.getElementById('time'));
+		}, 10);
 }
 
 
@@ -29,38 +29,36 @@ function millisecondsToTime(time) {
 	return pad(hrs) + ':' + pad(mins) + ':' + pad(secs) + ':' + pad(ms);
 }
 
-function runStopwatch(instruction) {
-	switch (instruction) {
-		case "start":
-			if (!running) {
-				setTimer();
-			}
-			break;
-		case "pause":
-			if (running) {
-			clearInterval(timer);
-			}
-			break;
-		case "reset":
-			milliseconds = 0;
-			break;
-		default:
-			break;
+function startPauseClick() {
+
+	if (!running) {
+		setTimer();
+		running = true;
+		ReactDOM.render("Pause", document.getElementById('start'));
 	}
+	else {
+		clearInterval(timer);
+		running = false;
+		ReactDOM.render("Start", document.getElementById('start'));
+	}
+
 }
 
-function startClick() {
-	runStopwatch("start");
-	running = true;
+function lapClick() {
+	lapTimes.unshift(milliseconds);
+	ReactDOM.render(createLapList(), document.getElementById('laps'));
 }
 
-function pauseClick() {
-	runStopwatch("pause");
-	running = false;
+function createLapList(){
+	return(
+		<ol>
+			{lapTimes.map(lapTime => <li>{millisecondsToTime(lapTime)}</li>)}
+		</ol>
+	)
 }
 
 function resetClick() {
-	runStopwatch("reset");
+	milliseconds = 0;
 	ReactDOM.render(millisecondsToTime(milliseconds), document.getElementById('time'));
 }
 
@@ -74,9 +72,12 @@ function App() {
 					<h1 id="time">00:00:00:00</h1>
 				</div>
 				<div className="button-align">
-					<button className="start button" onClick={startClick}>Start</button>
-					<button className="pause button" onClick={pauseClick}>Pause</button>
-					<button className="reset button" onClick={resetClick}>Reset</button>
+					<button className="button" id="start" onClick={startPauseClick}>Start</button>
+					<button className="button" onClick={resetClick}>Reset</button>
+				</div>
+				<div className="button" onClick={lapClick}>Lap</div>
+				<div className="lap-times" id="laps">
+
 				</div>
 			</div>
 		</div>
