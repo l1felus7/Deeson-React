@@ -1,11 +1,11 @@
-import React, { useState }from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
 var milliseconds = -1
 var timer;
 var running = false;
-var lapTimes = useState([]);
+var lapTimes = [];
 
 function setTimer() {
 	timer = setInterval(function update() {
