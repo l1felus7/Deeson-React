@@ -36,11 +36,10 @@ function runStopwatch(instruction) {
 			clearInterval(timer);
 			break;
 		case "reset":
-		milliseconds = 0;
+			milliseconds = 0;
 			break;
 		default:
 			break;
-
 	}
 }
 
@@ -55,7 +54,6 @@ function pauseClick() {
 function resetClick() {
 	runStopwatch("reset");
 	ReactDOM.render(millisecondsToTime(milliseconds), document.getElementById('time'));
-
 }
 
 

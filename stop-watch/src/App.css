@@ -6,10 +6,22 @@
   align-items: center;
   margin: auto;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
   width: 40pc;
   height: 40pc;
   box-shadow: 4px 4px 5px 6px rgb(100, 100, 100);
+  border-radius: 15px 50px 30px;
+}
+
+.number-box{
+  margin: 10pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  padding-top: -5pt;
+  background-color: #ffffff;
+  font-family: monospace;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 6px rgb(0, 0, 0);
 }
 
 .button-align {
