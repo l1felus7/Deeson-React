@@ -6,12 +6,24 @@ var milliseconds = -1
 var timer;
 var running = false;
 var lapTimes = [];
+var addLapTimes = setTimeout(function initialLapLoad(){updateLaptimes(); console.log(addLapTimes);}, 500);
+
+function retrieveSavedLapTimes() {
+	var data = localStorage.getItem('lapTimes');
+	if (data === null || data === "") {
+		console.log("No data stored");
+	}
+	else {
+		lapTimes = data.split(',')
+	}
+}
 
 function setTimer() {
 	timer = setInterval(function update() {
 		milliseconds++;
 		ReactDOM.render(millisecondsToTime(milliseconds), document.getElementById('time'));
 	}, 10);
+	console.log(lapTimes);
 }
 
 
@@ -30,7 +42,7 @@ function millisecondsToTime(time) {
 }
 
 function startPauseClick() {
-
+	updateLaptimes();
 	if (!running) {
 		setTimer();
 		running = true;
@@ -51,6 +63,11 @@ function lapClick() {
 	else {
 		lapTimes.unshift(milliseconds);
 	}
+	localStorage.setItem('lapTimes', lapTimes.toString());
+	updateLaptimes();
+}
+
+function updateLaptimes() {
 	ReactDOM.render(createLapList(), document.getElementById('laps'));
 }
 
@@ -66,19 +83,22 @@ function createLapList() {
 
 function deleteLap(index) {
 	lapTimes.splice(index, 1);
-	ReactDOM.render(createLapList(), document.getElementById('laps'));
+	updateLaptimes();
+	localStorage.setItem('lapTimes', lapTimes.toString());
 }
 
 
 function resetClick() {
+	updateLaptimes();
 	milliseconds = 0;
 	ReactDOM.render(millisecondsToTime(milliseconds), document.getElementById('time'));
 }
 
 
 function App() {
-
+	retrieveSavedLapTimes();
 	return (
+
 		<div className="background">
 			<div className="stopwatch">
 				<div className="number-box">
@@ -89,9 +109,7 @@ function App() {
 					<button className="button" onClick={resetClick}>Reset</button>
 				</div>
 				<div className="button" onClick={lapClick}>Lap</div>
-				<div className="lap-times" id="laps">
-
-				</div>
+				<div className="lap-times" id="laps"></div>
 			</div>
 		</div>
 	);
